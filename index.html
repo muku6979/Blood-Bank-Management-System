@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BLOOD BANK MANAGEMENT SYSTEM</title>
+    <script>
+        function validateForm() {
+            var username = document.forms["loginForm"]["t1"].value;
+            var password = document.forms["loginForm"]["p1"].value;
+
+            if (username === "admin" && password === "admin") {
+                // Valid credentials, no need to show an error
+                return true;
+            } else {
+                // Invalid credentials, show error message and prevent form submission
+                document.getElementById("error-message").innerText = "Invalid credentials. Please try again.";
+                return false;
+            }
+        }
+    </script>
+</head>
+<body background="login backgroung.jpeg">
+    <nav>
+        <h2 align="center">BLOOD BANK MANAGEMENT SYSTEM</h2>
+    </nav>
+    <main>
+        <section class="Donate">
+            <h1 align="center">Login</h1> 
+            <form name="loginForm" action="main.html" align="center" onsubmit="return validateForm()">
+                Userid&nbsp;&nbsp;<input type="text" name="t1" value=""><br><br>
+                Password&nbsp;&nbsp;<input type="password" name="p1" value=""><br><br>
+                <input type="submit" value="Submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="reset" value="Reset">
+            </form>
+            <p id="error-message" style="color: red; text-align: center;"></p>
+        </section>
+    </main>
+    <marquee behavior="" direction=""><h1>Donate Blood And Save Life</h1></marquee>
+</body>
+</html>
